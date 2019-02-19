@@ -15,7 +15,7 @@
 		display:none;
 	}
 	#btn-bars, #btn-search {
-		color: #000;
+		color: #dadfe1;
 		font-size: 22px;
 		position: absolute;
 		top: 4px;
@@ -90,9 +90,7 @@
 		margin-bottom: 40px;
 	}
 	
-	footer {
-		margin-top: 60px;
-	}
+
 	.copyright-mobile p {
 		font-size: 10px;
 		line-height: 0;
@@ -159,7 +157,7 @@
 	}
 	header #menu-mobile {
 		position: fixed;
-		background-color: #f5e51b;
+		background-color: #000;
 		width: 60%;
 		height: 100%;
 		left:-60%;
@@ -196,7 +194,7 @@
 		border-bottom: #11171D 1px solid;
 	}
 	header.open-menu #menu-mobile li a {
-		color: #11171D;
+		color: #dadfe1;
 		font-family: 'OpenSans';
 		font-weight: bold;
 		font-size: 16px;
@@ -215,7 +213,7 @@
 	header.open-menu .bar-close .btn-close {
 		background:none;
 		border: none;
-		color: #ffe600;
+		color: #dadfe1;
 		font-size: 22px;
 	}
 	header #input-search-mobile {
@@ -223,10 +221,10 @@
 		position: fixed;
 		width: 40%;
 		left: 36%;
-		background-color: #f5e51b;
+		background-color: #171F26;
 		border: none;
 		height: 40px;
-		color: #000;
+		color: #dadfe1;
 		outline: 0;
 		font-size: 16px;
 	}

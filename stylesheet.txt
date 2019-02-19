@@ -19,3 +19,12 @@ Hoki: #67809f
 silver sand: #bdc3c7
 
 Iron: #dadfe1
+Muito escuro: #0e0e0e
+Muito Muito escuro: #060606
+
+
+
+
+display: flex;
+    align-items: center;
+    justify-content: center;

@@ -8,7 +8,8 @@
 		<link rel="icon" type="image/png" href="public/images/icons/favicon.ico"/>
 		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="lib/owl.carousel/owl-carousel/owl.carousel.css">
-		<link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="public/fonts/fontawesome/css/fontawesome.min.css">
+		
 		<link rel="stylesheet" href="public/css/stylesheet.css">
 		<link rel="stylesheet" href="public/css/stylesheet-mobile.css">
 
