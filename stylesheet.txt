@@ -1,0 +1,21 @@
+https://www.bvb.de/eng
+Yellow_1: #f1d600
+Yellow Borussia: #ffe600
+Turbo: rgba(245, 229, 27, 1) #f5e51b
+Dolly: #ffff7e
+Cream: #ffffcc
+
+
+** Grey **
+
+Cinza escuro footer: #11171D
+Cinza claro footer: #171F26
+
+flat ships officer: #2C3A47
+Lynch: #6c7a89
+
+Hoki: #67809f
+
+silver sand: #bdc3c7
+
+Iron: #dadfe1
