@@ -157,7 +157,7 @@
 	}
 	header #menu-mobile {
 		position: fixed;
-		background-color: #000;
+		background-color: #2C3A47;
 		width: 60%;
 		height: 100%;
 		left:-60%;
@@ -206,7 +206,7 @@
 		position: absolute;
 		bottom: 40px;
 		right: 0;
-		background-color: #11171D;
+		background-color: #2e3131;
 		height: 40px;
 		width: 100%;
 	}

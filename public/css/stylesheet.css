@@ -34,7 +34,7 @@ body
 header {
 	width: 100%;
 	height: 170px;
-	background-color: #11171d;
+	background-color: #2e3131	;
 	z-index: 2;
   position: relative;
 }
@@ -56,7 +56,7 @@ header #row-hr-1 li a {
 
 
 #row-hr-2 {
-	background-color: #11171D ;
+	background-color: #171F26 ;
 	height: 40px;
 }
 
@@ -157,7 +157,7 @@ header #logotipo {
 }
 
 #row-section-1 {
-	background-color: #000;
+	background-color: #2C3A47;
 	width: 100%;
 	text-align: center;
 	padding: 50px;
@@ -236,15 +236,15 @@ header #logotipo {
 }
 
 #row-section-2 {
-	background-color: #0e0e0e;
+	background-color: #2e3131;
 	width: 100%;
 	text-align: center;
 	padding: 50px;
 }
 #row-section-2 p {
 	font-family: 'OpenSans';
-	font-size: 48px;
-	text-shadow: 1px 1px 1px #000;
+	font-size: 36px;
+	text-shadow: 2px 1px 1px #666;
 
 }
 #row-section-2 img {
@@ -285,7 +285,7 @@ header #logotipo {
 }
 
 #row-section-3 {
-	background-color: #0e0e0e;
+	background-color: #2e3131;
 	width: 100%;
 	padding: 50px;
 }
@@ -315,13 +315,13 @@ header #logotipo {
 }
 #row-section-3 .nav-tabs>li.active>a
 {
-	color: #fff;
-	background-color: #0e0e0e;
+	color: #dadfe1;
+	background-color: #2e3131;
 }
 
 #row-section-3 .nav-tabs>li a
 {
-	color: #2C3A47;
+	color: #67809f;
 }
 
 
@@ -412,11 +412,11 @@ font-weight: bold;
 
 .roundblock
 {
-	background-color: #171F26;
-	background: -webkit-linear-gradient(45deg, #0e0e0e, #171F26);
-	background: -o-linear-gradient(45deg, #0e0e0e, #171F26);
-	background: -moz-linear-gradient(45deg, #0e0e0e, #171F26);
-	background: linear-gradient(45deg, #0e0e0e, #171F26);
+	background-color: #2C3A47;
+	background: -webkit-linear-gradient(45deg, #2e3131, #2C3A47);
+	background: -o-linear-gradient(45deg, #2e3131, #2C3A47);
+	background: -moz-linear-gradient(45deg, #2e3131, #2C3A47);
+	background: linear-gradient(45deg, #2e3131, #2C3A47);
 	width:180px;
 	height:180px;
 	margin: 50px auto;
@@ -460,10 +460,10 @@ a#block1 p
 
 #row-section-2 .roundblock:hover
 {
-	background: -webkit-linear-gradient(45deg, #11171D, #2C3A47);
-	background: -o-linear-gradient(45deg, #11171D, #2C3A47);
-	background: -moz-linear-gradient(45deg, #11171D, #2C3A47);
-	background: linear-gradient(45deg, #11171D, #2C3A47);
+	background: -webkit-linear-gradient(45deg, #2C3A47, #67809f);
+	background: -o-linear-gradient(45deg, #2C3A47, #67809f);
+	background: -moz-linear-gradient(45deg, #2C3A47, #67809f);
+	background: linear-gradient(45deg, #2C3A47, #67809f);
 }
 
 #row-section-2 .roundblock:active
@@ -519,7 +519,7 @@ footer .row p {
 	margin-bottom: 0;
 }
 footer .row-footer-1 {
-	background-color: #171F26	;
+	background-color: #2C3A47	;
 	min-height: 420px;
 	padding-bottom: 50px
 }
@@ -965,7 +965,7 @@ header nav{
 
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
 .prettyprint {
-	background: #0e0e0e;
+	background: #2e3131;
 	font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
 	border: 0 !important;
 }
