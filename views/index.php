@@ -71,8 +71,7 @@
 						</ul>
     
       					<div id="tab-languages" class="tab-content">
-<div id="home" class="tab-pane fade in active">
-<pre class="prettyprint linenums:1">public static function validForgotDecrypt( $code )
+<div id="home" class="tab-pane fade in active"><pre class="prettyprint linenums:1">public static function validForgotDecrypt( $code )
 {
 
     $idrecovery = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, User::SECRET, base64_decode($code), MCRYPT_MODE_ECB);
@@ -111,6 +110,7 @@
     }//end else
 
 }//END validForgotDecrypt
+
 </pre>
 </div>
 
@@ -193,6 +193,7 @@
     exit;
 
 });//END route
+
 </pre>
 </div>
                             
@@ -264,6 +265,7 @@ public function setPhoto( $file )
     $this->checkPhoto();
 
 }//END setPhoto
+
 </pre>
 </div>
                     
@@ -314,6 +316,7 @@ public function setPhoto( $file )
     }//end else
 
 }//END getProducts
+
 </pre>
 </div>
 			

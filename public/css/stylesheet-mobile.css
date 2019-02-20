@@ -3,6 +3,7 @@
 	.container {
 		width: 100%;
 	}
+	
 	header #logotipo {
 		display: none;;
 	}
@@ -307,6 +308,10 @@
 		font-size: 24px;
 	}
 	
+	#row-section-3 .container
+	{
+		width: 100%!important;
+	}
 
 	#row-section-3 p {
 		font-size: 36px;
