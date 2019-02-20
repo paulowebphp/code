@@ -96,6 +96,70 @@ $(document).ready(function(){
 
 
 
+	
+
+
+	$(".nav-tabs a").click( function( e )
+	{
+		e.preventDefault();
+		$(this).tab('show');
+
+	});//END click
+
+	$('.nav-tabs a').on('shown.bs.tab', function( event )
+	{
+		var x = $(event.target).text();         // active tab
+		var y = $(event.relatedTarget).text();  // previous tab
+		$(".act span").text(x);
+		$(".prev span").text(y);
+
+	});//END on
+
+
+
+
+
+
+	$('#block1').on('click', function(e)
+	{
+		e.preventDefault();
+		
+		$('#tab-languages').load('./inc/php.html');	
+
+	});//END on
+
+
+
+
+
+
+
+	$('#block2').on('click', function(e)
+	{
+
+		e.preventDefault();
+		
+		$('#tab-languages').load('./inc/js.html');	
+
+	});//END on
+
+
+
+
+
+
+
+	$('#round-block1').on('mouseover', function(e)
+	{
+		console.log('ok');
+		
+
+	});//END on
+
+
+
+
+
 
 	
 });//END ready

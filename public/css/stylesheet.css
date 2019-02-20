@@ -242,9 +242,8 @@ header #logotipo {
 	padding: 50px;
 }
 #row-section-2 p {
-	color: #f5e51b;
 	font-family: 'OpenSans';
-	font-size: 54px;
+	font-size: 48px;
 	text-shadow: 1px 1px 1px #000;
 
 }
@@ -414,10 +413,10 @@ font-weight: bold;
 .roundblock
 {
 	background-color: #171F26;
-	background: -webkit-linear-gradient(45deg, #0e0e0e, #2C3A47);
-	background: -o-linear-gradient(45deg, #0e0e0e, #2C3A47);
-	background: -moz-linear-gradient(45deg, #0e0e0e, #2C3A47);
-	background: linear-gradient(45deg, #0e0e0e, #2C3A47);
+	background: -webkit-linear-gradient(45deg, #0e0e0e, #171F26);
+	background: -o-linear-gradient(45deg, #0e0e0e, #171F26);
+	background: -moz-linear-gradient(45deg, #0e0e0e, #171F26);
+	background: linear-gradient(45deg, #0e0e0e, #171F26);
 	width:180px;
 	height:180px;
 	margin: 50px auto;
@@ -428,32 +427,71 @@ font-weight: bold;
 	justify-content: center;
 
 }
-
-#block1 i
+#row-section-2 a
 {
+	text-decoration: none;
 
-	color: #8224e3!important;
-	
 }
-#block1
+.row-section-2 a:hover
+{
+	text-decoration: none;
+
+}
+
+#round-block1
 {
 
 	box-shadow: #8224e3 0 9px 30px -6px;
 	
 }
-#block2 i
+
+a#block1 i
 {
 
-	color: #eeee22!important;
+	color: #8224e3!important;
 	
 }
-#block2
+a#block1 p
+{
+
+	color: #8224e3!important;
+	
+}
+
+#row-section-2 .roundblock:hover
+{
+	background: -webkit-linear-gradient(45deg, #11171D, #2C3A47);
+	background: -o-linear-gradient(45deg, #11171D, #2C3A47);
+	background: -moz-linear-gradient(45deg, #11171D, #2C3A47);
+	background: linear-gradient(45deg, #11171D, #2C3A47);
+}
+
+#row-section-2 .roundblock:active
+{
+	background: -webkit-linear-gradient(45deg, green, purple);
+	background: -o-linear-gradient(45deg, green, purple);
+	background: -moz-linear-gradient(45deg, green, purple);
+	background: linear-gradient(45deg, green, purple);
+}
+
+#round-block2
 {
 
 	box-shadow: #eeee22 0 9px 30px -6px;
 	
 }
+#round-block2 i
+{
 
+	color: #eeee22!important;
+	
+}
+a#block2 p
+{
+
+	color: #eeee22!important;
+	
+}
 
 
 
