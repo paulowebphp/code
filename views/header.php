@@ -4,12 +4,10 @@
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width:device-width, initial-scale=1">
-		<title>Borussia</title>
+		<title>Code Samples</title>
 		<link rel="icon" type="image/png" href="public/images/icons/favicon.ico"/>
 		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="lib/owl.carousel/owl-carousel/owl.carousel.css">
 		<link rel="stylesheet" href="public/fonts/fontawesome/css/fontawesome.min.css">
-		
 		<link rel="stylesheet" href="public/css/stylesheet.css">
 		<link rel="stylesheet" href="public/css/stylesheet-mobile.css">
 

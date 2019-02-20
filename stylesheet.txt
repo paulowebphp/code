@@ -10,17 +10,18 @@ Cream: #ffffcc
 
 Cinza escuro footer: #11171D
 Cinza claro footer: #171F26
+Outter space: #2e3131
 
 flat ships officer: #2C3A47
+Hoki: #67809f
 Lynch: #6c7a89
 
-Hoki: #67809f
 
 silver sand: #bdc3c7
-
+silver: #bfbfbf
+pumice: #d2d7d3
 Iron: #dadfe1
-Muito escuro: #0e0e0e
-Muito Muito escuro: #060606
+
 
 
 

@@ -31,10 +31,10 @@
 							<div id="round-block1" class="roundblock">
 								<i class="fa fa-code"></i>
 							</div>
-							<p>
-								PHP 7
-							</p>
-						</a>
+                        </a>
+                        <p id="paragraph-block1">
+                            PHP 7
+                        </p>
 					</div>
 
 					<div class="col-md-6">
@@ -42,10 +42,10 @@
 							<div id="round-block2" class="roundblock">
 								<i class="fa fa-connectdevelop"></i>
 							</div>
-							<p>
-								Javascript ES6
-							</p>
-						</a>
+                        </a>
+                        <p id="paragraph-block2">
+                            Javascript ES6
+                        </p>
 					</div>
 
 				</div>
@@ -71,43 +71,251 @@
 						</ul>
     
       					<div id="tab-languages" class="tab-content">
-			
 <div id="home" class="tab-pane fade in active">
-<pre class="prettyprint linenums:1">
-class Main 1
+<pre class="prettyprint linenums:1">public static function validForgotDecrypt( $code )
 {
 
-}
+    $idrecovery = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, User::SECRET, base64_decode($code), MCRYPT_MODE_ECB);
+
+    $sql = new Sql();
+
+    $results = $sql->select("
+
+        SELECT * 
+        FROM tb_userspasswordsrecoveries a
+        INNER JOIN tb_users b USING(iduser)
+        INNER JOIN tb_persons c USING(idperson)
+        WHERE 
+            a.idrecovery = :idrecovery
+            AND
+            a.dtrecovery IS NULL
+            AND
+            DATE_ADD(a.dtregister, INTERVAL 1 HOUR) >= NOW();
+            
+    ", array(
+
+        ":idrecovery"=>$idrecovery
+        
+    ));
+
+    if( count($results) === 0 )
+    {
+        throw new \Exception("Não foi possível recuperar a senha.");
+
+    }//end if
+    else
+    {
+
+        return $results[0];
+
+    }//end else
+
+}//END validForgotDecrypt
 </pre>
 </div>
 
 <div id="menu1" class="tab-pane fade">
-<pre class="prettyprint linenums">
-class Main 2
+<pre class="prettyprint linenums">$app->post("/register", function()
 {
+
+    $_SESSION['registerValues'] = $_POST;
+
+    if
+    (
+        !isset($_POST['name'])
+        ||
+        $_POST['name'] == ''
+    )
+    {
+
+        User::setErrorRegister("Preencha o seu nome.");
+        header("Location: /login");
+        exit;
+
+    }//end if
+
+    if
+    (
+        !isset($_POST['email'])
+        ||
+        $_POST['email'] == ''
     
-}
+    )
+    {
+
+        User::setErrorRegister("Preencha o seu e-mail.");
+        header("Location: /login");
+        exit;
+
+    }//end if
+
+    if
+    (
+        !isset($_POST['password'])
+        ||
+        $_POST['password'] == ''
+    )
+    {
+
+        User::setErrorRegister("Preencha a senha.");
+        header("Location: /login");
+        exit;
+
+    }//end if
+
+    if( User::checkLoginExist($_POST['email']) === true )
+    {
+
+        User::setErrorRegister("Este endereço de e-mail já está sendo usado por outro usuário.");
+        header("Location: /login");
+        exit;
+
+    }//end if
+
+    $user = new User();
+
+    $user->setData(
+    [
+        'inadmin'=>0,
+        'deslogin'=>$_POST['email'],
+        'desperson'=>$_POST['name'],
+        'desemail'=>$_POST['email'],
+        'despassword'=>$_POST['password'],
+        'nrphone'=>$_POST['phone']
+
+    ]);
+
+    $user->save();
+
+    User::login($_POST['email'], $_POST['password']);
+
+    header('Location: /checkout');
+    exit;
+
+});//END route
 </pre>
 </div>
                             
 <div id="menu2" class="tab-pane fade">
-<pre class="prettyprint linenums">
-class Main 3
+<pre class="prettyprint linenums">public function checkPhoto()
 {
-    
-}
+
+    if(file_exists(
+
+        $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 
+        "res" . DIRECTORY_SEPARATOR . 
+        "site" . DIRECTORY_SEPARATOR . 
+        "img" . DIRECTORY_SEPARATOR . 
+        "products" . DIRECTORY_SEPARATOR . 
+        $this->getidproduct() . ".jpg"
+
+    ))
+    {
+        $url = "/res/site/img/products/" . $this->getidproduct() . ".jpg";
+
+    }//end if
+    else {
+
+        $url = "/res/site/img/product.jpg";
+
+    }//end else
+
+    return $this->setdesphoto($url);
+
+}//END checkPhoto
+
+
+
+public function setPhoto( $file )
+{
+
+    $extension = explode('.', $file['name']);
+    $extension = end($extension);
+
+    switch ($extension)
+    {
+
+        case "jpg":
+        case "jpeg":
+            $image = imagecreatefromjpeg($file["tmp_name"]);
+            break;
+
+        case "gif":
+            $image = imagecreatefromgif($file["tmp_name"]);
+            break;
+
+        case "png":
+            $image = imagecreatefrompng($file["tmp_name"]);
+            break;
+
+    }//end switch
+
+    $dist = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 
+        "res" . DIRECTORY_SEPARATOR . 
+        "site" . DIRECTORY_SEPARATOR . 
+        "img" . DIRECTORY_SEPARATOR . 
+        "products" . DIRECTORY_SEPARATOR . 
+        $this->getidproduct() . ".jpg";
+
+    imagejpeg($image, $dist);
+
+    imagedestroy($image);
+
+    $this->checkPhoto();
+
+}//END setPhoto
 </pre>
 </div>
                     
 <div id="menu3" class="tab-pane fade">
-<pre class="prettyprint linenums">
-class Main 4
+<pre class="prettyprint linenums">public function getProducts( $related = true )
 {
-    
-}
+
+    $sql = new Sql();
+
+    if ( $related === true )
+    {
+
+        return $sql->select("
+
+            SELECT * FROM tb_products 
+            WHERE idproduct IN(
+                SELECT a.idproduct
+                FROM tb_products a
+                INNER JOIN tb_productscategories b ON a.idproduct = b.idproduct
+                WHERE b.idcategory = :idcategory
+                );
+
+        ", [
+
+            ':idcategory'=>$this->getidcategory()
+
+        ]);//end return
+
+    }//end if
+    else {
+
+        return $sql->select("
+
+            SELECT * FROM tb_products 
+            WHERE idproduct NOT IN(
+                SELECT a.idproduct
+                FROM tb_products a
+                INNER JOIN tb_productscategories b ON a.idproduct = b.idproduct
+                WHERE b.idcategory = :idcategory
+            );
+
+        ", [
+
+            ':idcategory'=>$this->getidcategory()
+
+        ]);//end return
+
+    }//end else
+
+}//END getProducts
 </pre>
 </div>
-	
 			
 						</div>
 

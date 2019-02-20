@@ -134,10 +134,14 @@ $(document).ready(function(){
 			//phpHtml = $.parseHTML(phpValue);
 			phpPrettify = PR.prettyPrintOne(phpValue);
 			//console.log(phpPrettify);	
+
+			
+
 			$('#tab-languages').innerHtml = '';
 			$('#tab-languages').html(phpPrettify);
 
 			let a = document.querySelector('#tab-list');
+			
 			
 			if( a.children[0].className != 'active' )
 			{
@@ -145,6 +149,9 @@ $(document).ready(function(){
 				a.children[0].className = 'active';
 
 			}//end else
+
+			a.children[0].children[0].innerHTML = '';
+			a.children[0].children[0].innerHTML = 'PHP 1';
 			
 			if( a.children[1].className == 'active' )
 			{
@@ -154,6 +161,9 @@ $(document).ready(function(){
 
 			}//end else
 
+			a.children[1].children[0].innerHTML = '';
+			a.children[1].children[0].innerHTML = 'PHP 2';
+
 			if( a.children[2].className == 'active' )
 			{
 
@@ -161,12 +171,19 @@ $(document).ready(function(){
 				a.children[2].className = '';
 
 			}//end else
+
+			a.children[2].children[0].innerHTML = '';
+			a.children[2].children[0].innerHTML = 'PHP 3';
+
 			if( a.children[3].className == 'active' )
 			{
 
 				a.children[3].className = '';
 
 			}//end else
+
+			a.children[3].children[0].innerHTML = '';
+			a.children[3].children[0].innerHTML = 'JS 4';
 	
 		}).fail(function(){
 	
@@ -211,6 +228,9 @@ $(document).ready(function(){
 				a.children[0].className = 'active';
 
 			}//end else
+
+			a.children[0].children[0].innerHTML = '';
+			a.children[0].children[0].innerHTML = 'JS 1';
 			
 			if( a.children[1].className == 'active' )
 			{
@@ -220,6 +240,9 @@ $(document).ready(function(){
 
 			}//end else
 
+			a.children[1].children[0].innerHTML = '';
+			a.children[1].children[0].innerHTML = 'JS 2';
+
 			if( a.children[2].className == 'active' )
 			{
 
@@ -227,12 +250,19 @@ $(document).ready(function(){
 				a.children[2].className = '';
 
 			}//end else
+
+			a.children[2].children[0].innerHTML = '';
+			a.children[2].children[0].innerHTML = 'JS ';
+
 			if( a.children[3].className == 'active' )
 			{
 
 				a.children[3].className = '';
 
 			}//end else
+
+			a.children[3].children[0].innerHTML = '';
+			a.children[3].children[0].innerHTML = 'JS 4';
 
 			
 	

@@ -34,7 +34,7 @@ body
 header {
 	width: 100%;
 	height: 170px;
-	background-color: #2e3131	;
+	background-color: #2C3A47;
 	z-index: 2;
   position: relative;
 }
@@ -56,12 +56,12 @@ header #row-hr-1 li a {
 
 
 #row-hr-2 {
-	background-color: #171F26 ;
+	background-color: #2e3131 ;
 	height: 40px;
 }
 
 #row-hr-3 {
-	background-color: #000 ;
+	background-color: #2C3A47 ;
 	height: 40px;
 }
 
@@ -98,7 +98,7 @@ header #logotipo {
 }
 
 #menu li.search input {
-	background-color: #2C3A47;
+	background-color: #171F26;
 	color: #dadfe1;
 	border: none;
 	height: 30px;
@@ -157,7 +157,7 @@ header #logotipo {
 }
 
 #row-section-1 {
-	background-color: #2C3A47;
+	background-color: #2e3131;
 	width: 100%;
 	text-align: center;
 	padding: 50px;
@@ -236,7 +236,7 @@ header #logotipo {
 }
 
 #row-section-2 {
-	background-color: #2e3131;
+	background-color: #171F26;
 	width: 100%;
 	text-align: center;
 	padding: 50px;
@@ -245,7 +245,6 @@ header #logotipo {
 	font-family: 'OpenSans';
 	font-size: 36px;
 	text-shadow: 2px 1px 1px #666;
-
 }
 #row-section-2 img {
 	width: 80%;
@@ -285,7 +284,7 @@ header #logotipo {
 }
 
 #row-section-3 {
-	background-color: #2e3131;
+	background-color: #171F26;
 	width: 100%;
 	padding: 50px;
 }
@@ -316,7 +315,7 @@ header #logotipo {
 #row-section-3 .nav-tabs>li.active>a
 {
 	color: #dadfe1;
-	background-color: #2e3131;
+	background-color: #171F26;
 }
 
 #row-section-3 .nav-tabs>li a
@@ -413,10 +412,10 @@ font-weight: bold;
 .roundblock
 {
 	background-color: #2C3A47;
-	background: -webkit-linear-gradient(45deg, #2e3131, #2C3A47);
-	background: -o-linear-gradient(45deg, #2e3131, #2C3A47);
-	background: -moz-linear-gradient(45deg, #2e3131, #2C3A47);
-	background: linear-gradient(45deg, #2e3131, #2C3A47);
+	background: -webkit-linear-gradient(45deg, #171F26, #2C3A47);
+	background: -o-linear-gradient(45deg, #171F26, #2C3A47);
+	background: -moz-linear-gradient(45deg, #171F26, #2C3A47);
+	background: linear-gradient(45deg, #171F26, #2C3A47);
 	width:180px;
 	height:180px;
 	margin: 50px auto;
@@ -457,13 +456,17 @@ a#block1 p
 	color: #8224e3!important;
 	
 }
+#paragraph-block1
+{
+	color:#8224e3;
+}
 
 #row-section-2 .roundblock:hover
 {
-	background: -webkit-linear-gradient(45deg, #2C3A47, #67809f);
-	background: -o-linear-gradient(45deg, #2C3A47, #67809f);
-	background: -moz-linear-gradient(45deg, #2C3A47, #67809f);
-	background: linear-gradient(45deg, #2C3A47, #67809f);
+	background: -webkit-linear-gradient(45deg, #2e3131, #2C3A47);
+	background: -o-linear-gradient(45deg, #2e3131, #2C3A47);
+	background: -moz-linear-gradient(45deg, #2e3131, #2C3A47);
+	background: linear-gradient(45deg, #2e3131, #2C3A47);
 }
 
 #row-section-2 .roundblock:active
@@ -492,7 +495,10 @@ a#block2 p
 	color: #eeee22!important;
 	
 }
-
+#paragraph-block2
+{
+	color:#eeee22;
+}
 
 
 
@@ -957,7 +963,7 @@ header nav{
 
 #row-section-3 pre
 {
-	font-size: 16px;
+	font-size: 13px;
 }
 
 
@@ -965,13 +971,13 @@ header nav{
 
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
 .prettyprint {
-	background: #2e3131;
+	background: #171F26;
 	font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
 	border: 0 !important;
 }
 
 .pln {
-	color: #fff!important;
+	color: lightseagreen!important;
 }
 
 
@@ -980,7 +986,7 @@ ol.linenums{
 	counter-reset:linenumber;
 	margin-top: 0;
 	margin-bottom: 0;
-	color: #666;
+	color: #666!important;
 }
 ol.linenums li{
 	list-style-type:none;
@@ -989,7 +995,7 @@ ol.linenums li{
 ol.linenums li:before{
 	content: counter(linenumber);
 	float:left;
-	margin-left:-3em;
+	margin-left:-4em;
 	text-align:left;
 	width:3em;
 	margin-right: 10%;
@@ -1007,12 +1013,12 @@ li.L7,
 li.L8,
 li.L9 {
 	padding-left: 1em;
-	background-color: #0e0e0e;
+	background-color: #171F26!important;
 	list-style-type: decimal;
 }
 
 li.L1, li.L3, li.L5, li.L7, li.L9 {
-	background: #0e0e0e!important;    
+	background: #171F26!important;    
 }
 
 
@@ -1021,37 +1027,37 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
 	/* string content */
 
 	.str {
-		color: #6f0;
+		color: orange!important;
 	}
 
 	/* keyword */
 
 	.kwd {
-		color: #f60;
+		color: mediumvioletred!important;
 	}
 
 	/* comment */
 
 	.com {
-		color: #93c;
+		color: darkgreen!important;
 	}
 
 	/* type name */
 
 	.typ {
-		color: #458;
+		color: palegoldenrod!important;
 	}
 
 	/* literal value */
 
 	.lit {
-		color: #458;
+		color: darkseagreen!important;
 	}
 
 	/* punctuation */
 
 	.pun {
-		color: #fff;
+		color: #fff!important;
 	}
 
 	/* lisp open bracket */

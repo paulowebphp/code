@@ -1,36 +1,413 @@
 <div id="home" class="tab-pane fade in active">
-    <pre class="prettyprint linenums:1">
-    class Javascript 1
+    <pre class="prettyprint linenums:1">this.btnRename.addEventListener('click', e =>
+{
+
+    let li = this.getSelection()[0];
+
+    let file = JSON.parse(li.dataset.file);
+
+    let name = prompt("Digite o novo nome: ", file.name);
+
+    if( name )
     {
+
+        file.name = name;
+
+        this.getFirebaseRef().child(li.dataset.key).set(file);
+
+    }//end if
+
+});//end addEventListener
+
+this.listFilesEl.addEventListener('selectionchange', e =>
+{
+
+    switch( this.getSelection().length )
+    {
+        case 0:
+            this.btnRename.style.display = 'none';
+            this.btnDelete.style.display = 'none';
+            break;
     
-    }
-    </pre>
-    </div>
+        case 1:
+            this.btnRename.style.display = 'block';
+            this.btnDelete.style.display = 'block';
+            break;
     
-    <div id="menu1" class="tab-pane fade">
-    <pre class="prettyprint linenums">
-    class Javascript 2
+        default:
+            this.btnDelete.style.display = 'block';
+            this.btnRename.style.display = 'none';
+            break;
+
+    }//end switch
+
+});//end addEventListener
+
+this.btnSendFileEl.addEventListener('click', event =>
+{
+
+    this.inputFilesEl.click();
+
+});//end addEventListener
+</pre>
+</div>
+
+<div id="menu1" class="tab-pane fade">
+<pre class="prettyprint linenums">removeTask()
+{
+
+    let promises = [];
+
+    this.getSelection().forEach( li =>
     {
+
+        let file = JSON.parse(li.dataset.file);
+
+        let key = li.dataset.key;
+
+        promises.push( new Promise( (resolve,reject) =>
+        {
+
+            if( file.type === 'folder' )
+            {
+
+                this.removeFolderTask(this.currentFolder.join('/'),file.name).then( () =>
+                {
+
+                    resolve(
+                    {
         
-    }
-    </pre>
-    </div>
-                                
-    <div id="menu2" class="tab-pane fade">
-    <pre class="prettyprint linenums">
-    class Javascript 3
+                        // key:key
+                        fields: { key }
+        
+                    });//end resolve
+
+                });//end removeFolderTask
+
+            }//end if
+            else if( file.type )
+            {
+
+                this.removeFile(this.currentFolder.join('/'),file.name).then( () =>
+                {
+                    
+                    resolve(
+                    {
+        
+                        // key:key
+                        fields: { key }
+        
+                    });//end resolve
+
+                });//end removeFile
+                
+            }//end else if
+
+        }));//end push
+
+    });//end getSelection
+
+    return Promise.all(promises);
+
+}//END removeTask
+</pre>
+</div>
+                            
+<div id="menu2" class="tab-pane fade">
+<pre class="prettyprint linenums">elementsPrototype()
+{
+    
+    Element.prototype.hide = function()
     {
-        
-    }
-    </pre>
-    </div>
-                        
-    <div id="menu3" class="tab-pane fade">
-    <pre class="prettyprint linenums">
-    class Javascript 4
+        this.style.display = 'none';
+
+        return this;
+
+    }//end hide
+
+
+
+    
+    Element.prototype.show = function()
     {
+        this.style.display = 'block';
+
+        return this;
+
+    }//end show
+
+
+
+    
+    Element.prototype.toggle = function()
+    {
+        this.style.display = (this.style.display === 'none') ? 'block' : 'none';
+
+        return this;
+
+    }//end toggle
+
+
+
+
+    
+    Element.prototype.on = function( events, fn )
+    {
+
+        events.split(' ').forEach( event =>
+        {
+
+            this.addEventListener(event, fn);   
+
+        });//end split
+
+        return this;
         
-    }
-    </pre>
-    </div>
+    }//end on
+
+
+
+    
+    Element.prototype.css = function( styles )
+    {
+
+        for( let name in styles )
+        {
+
+            this.style[name] = styles[name];
+
+        }//end for
+
+        return this;
+
+    }//end css
+
+
+
+    
+    Element.prototype.addClass = function( name )
+    {
+
+        this.classList.add(name);
+
+        return this;
+
+    }//end addClass
+
+
+
+
+    
+    Element.prototype.removeClass = function( name )
+    {
+
+        this.classList.remove(name);
+
+        return this;
+
+    }//end removeClass
+
+
+
+    
+    Element.prototype.toggleClass = function( name )
+    {
+
+        this.classList.toggle(name);
+
+        return this;
+
+    }//end toggleClass
+
+
+
+    
+    Element.prototype.hasClass = function( name )
+    {
+
+        return this.classList.contains(name);
+
+    }//end hasClass
+
+
+
+
+    HTMLFormElement.prototype.getForm = function()
+    {
+
+        return new FormData(this);
+
+    }//end getForm
+
+
+
+
+    HTMLFormElement.prototype.toJSON = function()
+    {
+
+        let json = {};
+
+        this.getForm().forEach( (value,key) =>
+        {
+
+            json[key] = value;
+
+        });//end getForm
+
+        return json;
+
+    }//end toJSON
+
+
+
+
+
+}//END elementsPrototype
+</pre>
+</div>
+                    
+<div id="menu3" class="tab-pane fade">
+<pre class="prettyprint linenums">/** DB */
+var conn = require('./db');
+
+
+
+module.exports = 
+{
+
+    dashboard()
+    {
+
+        return new Promise( (resolve,reject) =>
+        {
+
+            conn.query(
+            `
+            SELECT
+                (SELECT COUNT(*) FROM tb_contacts) AS nrcontacts,
+                (SELECT COUNT(*) FROM tb_menus) AS nrmenus,
+                (SELECT COUNT(*) FROM tb_reservations) AS nrreservations,
+                (SELECT COUNT(*) FROM tb_users) AS nrusers;
+
+            `,
+            
+            (err, results) =>
+            {
+                if( err )
+                {
+                    reject(err);
+
+                }//end if
+                else
+                {
+                    resolve(results[0]);
+
+                }//end else
+
+            });//end query
+
+        });//end Promise
+
+    },//END dashboard
+
+
+
+
+
+
+
+
+    getParams( req, params )
+    {
+
+        return Object.assign(
+
+            {},
+
+            {
+                menus: req.menus,
+                user: req.session.user
+            },
+
+            params
+
+        );//end assign 
+
+    },//END getParams
+
+
+
+
+
+
+    getMenus( req )
+    {
+
+        let menus = [
+            
+            {
+                text: "Tela Inicial",
+                href: "/admin/",
+                icon: "home",
+                active: false
+            },
+            
+            {
+                text: "Menu",
+                href: "/admin/menus",
+                icon: "cutlery",
+                active: false
+            },
+            
+            {
+                text: "Reservas",
+                href: "/admin/reservations",
+                icon: "calendar-check-o",
+                active: false
+            },
+            
+            {
+                text: "Contatos",
+                href: "/admin/contacts",
+                icon: "comments",
+                active: false
+            },
+            
+            {
+                text: "Usuários",
+                href: "/admin/users",
+                icon: "users",
+                active: false
+            },
+            
+            {
+                text: "E-mails",
+                href: "/admin/emails",
+                icon: "envelope",
+                active: false
+            }
+
+        ];//end let menus
+
+        menus.map( menu =>
+        {
+
+            if( menu.href === `/admin${req.url}` ) menu.active = true;
+
+
+        });//end map
+
+        return menus;
+
+    }//END getMenus
+
+
+
+
+
+
+
+};//END module.exports
+</pre>
+</div>
     
