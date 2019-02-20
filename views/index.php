@@ -10,7 +10,7 @@
 
 					<div class="col-md-12">
 						<h1>CODE SAMPLES
-							<small>Você gostaria de códigos organizados para o seu site?</small>
+							<small>Alguns trechos de códigos meus: você gostaria de códigos assim no seu projeto?</small>
 						</h1>
 					</div>
 
