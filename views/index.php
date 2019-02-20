@@ -25,26 +25,29 @@
 			
 			<div class="container">
 				<div class="row">
+
 					<div class="col-md-6">
 						<a id="block1" href="#">
 							<div id="round-block1" class="roundblock">
 								<i class="fa fa-code"></i>
-						</div>
-						<p>
-							PHP 7
-						</p>
+							</div>
+							<p>
+								PHP 7
+							</p>
 						</a>
 					</div>
+
 					<div class="col-md-6">
 						<a id="block2" href="#">
-						<div id="round-block2" class="roundblock">
-							<i class="fa fa-connectdevelop"></i>
-						</div>
-						<p>
-							Javascript ES6
-						</p>
+							<div id="round-block2" class="roundblock">
+								<i class="fa fa-connectdevelop"></i>
+							</div>
+							<p>
+								Javascript ES6
+							</p>
 						</a>
 					</div>
+
 				</div>
 			</div>
 
@@ -60,76 +63,51 @@
 
 					<div class="col-md-12">
 
-						<ul class="nav nav-tabs">
+						<ul id="tab-list" class="nav nav-tabs">
 							<li class="active"><a href="#home">PHP 1</a></li>
 							<li><a href="#menu1">PHP 2</a></li>
 							<li><a href="#menu2">PHP 3</a></li>
 							<li><a href="#menu3">PHP 4</a></li>
 						</ul>
     
-      			<div id="tab-languages" class="tab-content">
-
+      					<div id="tab-languages" class="tab-content">
+			
 <div id="home" class="tab-pane fade in active">
-	
-	<p>
-
 <pre class="prettyprint linenums:1">
-
 class Main 1
 {
 
 }
-
 </pre>
+</div>
 
-								</p>
-
-							</div>
-									
-        			<div id="menu1" class="tab-pane fade">
-					
-								<p>
-
+<div id="menu1" class="tab-pane fade">
 <pre class="prettyprint linenums">
 class Main 2
 {
-	
+    
 }
 </pre>
-
-								</p>
-				
-							</div>
-						
-							<div id="menu2" class="tab-pane fade">
-					
-								<p>
-
+</div>
+                            
+<div id="menu2" class="tab-pane fade">
 <pre class="prettyprint linenums">
 class Main 3
 {
-	
+    
 }
 </pre>
-
-		  					</p>
-					
-							</div>
-				
-							<div id="menu3" class="tab-pane fade">
-				
-								<p>
-
+</div>
+                    
+<div id="menu3" class="tab-pane fade">
 <pre class="prettyprint linenums">
 class Main 4
 {
-	
+    
 }
 </pre>
-
-		  					</p>
-				
-							</div>
+</div>
+	
 			
 						</div>
 

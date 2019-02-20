@@ -124,10 +124,64 @@ $(document).ready(function(){
 	{
 		e.preventDefault();
 		
-		$('#tab-languages').load('./inc/php.html');	
+		$.ajax({
+
+			url:'./inc/php.html'
+	
+		}).done(function(phpValue){
+			
+			//console.log(phpValue);
+			//phpHtml = $.parseHTML(phpValue);
+			phpPrettify = PR.prettyPrintOne(phpValue);
+			//console.log(phpPrettify);	
+			$('#tab-languages').innerHtml = '';
+			$('#tab-languages').html(phpPrettify);
+
+			let a = document.querySelector('#tab-list');
+			
+			if( a.children[0].className != 'active' )
+			{
+
+				a.children[0].className = 'active';
+
+			}//end else
+			
+			if( a.children[1].className == 'active' )
+			{
+
+
+				a.children[1].className = '';
+
+			}//end else
+
+			if( a.children[2].className == 'active' )
+			{
+
+
+				a.children[2].className = '';
+
+			}//end else
+			if( a.children[3].className == 'active' )
+			{
+
+				a.children[3].className = '';
+
+			}//end else
+	
+		}).fail(function(){
+	
+			console.log("Erro....");
+	
+		});//end ajax
 
 	});//END on
 
+
+
+
+
+
+	
 
 
 
@@ -136,26 +190,59 @@ $(document).ready(function(){
 
 	$('#block2').on('click', function(e)
 	{
-
 		e.preventDefault();
 		
-		$('#tab-languages').load('./inc/js.html');	
+		$.ajax({
+
+			url:'./inc/js.html'
+	
+		}).done(function(jsValue){
+			
+			//jsHtml = $.parseHTML(jsValue);
+			phpPrettify = PR.prettyPrintOne(jsValue);
+			$('#tab-languages').innerHtml = '';
+			$('#tab-languages').html(phpPrettify);
+			
+			let a = document.querySelector('#tab-list');
+			
+			if( a.children[0].className != 'active' )
+			{
+
+				a.children[0].className = 'active';
+
+			}//end else
+			
+			if( a.children[1].className == 'active' )
+			{
+
+
+				a.children[1].className = '';
+
+			}//end else
+
+			if( a.children[2].className == 'active' )
+			{
+
+
+				a.children[2].className = '';
+
+			}//end else
+			if( a.children[3].className == 'active' )
+			{
+
+				a.children[3].className = '';
+
+			}//end else
+
+			
+	
+		}).fail(function(){
+	
+			console.log("Erro....");
+	
+		});//end ajax
 
 	});//END on
-
-
-
-
-
-
-
-	$('#round-block1').on('mouseover', function(e)
-	{
-		console.log('ok');
-		
-
-	});//END on
-
 
 
 
