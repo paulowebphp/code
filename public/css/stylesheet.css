@@ -160,7 +160,8 @@ header #logotipo {
 	background-color: #2e3131;
 	width: 100%;
 	text-align: center;
-	padding: 50px;
+	padding: 20px;
+	min-height: 200px;
 }
 
 #row-section-1 p {
@@ -280,7 +281,7 @@ header #logotipo {
 #row-section-3 {
 	background-color: #171F26;
 	width: 100%;
-	padding: 10px;
+	padding: 25px 10px;
 }
 #row-section-3 p {
 	color: #fff;
@@ -315,6 +316,7 @@ header #logotipo {
 {
 	color: #dadfe1;
 	background-color: #171F26;
+	border-bottom-color: transparent!important;
 }
 
 #row-section-3 .nav-tabs>li a
@@ -997,7 +999,6 @@ ol.linenums li:before{
 	margin-left:-4em;
 	text-align:left;
 	width:3em;
-	margin-right: 10%;
 }
 
 

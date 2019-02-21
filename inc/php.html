@@ -2,7 +2,14 @@
 <pre class="prettyprint linenums:1">public static function validForgotDecrypt( $code )
 {
 
-    $idrecovery = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, User::SECRET, base64_decode($code), MCRYPT_MODE_ECB);
+    $idrecovery = mcrypt_decrypt(
+
+        MCRYPT_RIJNDAEL_128, 
+        User::SECRET, 
+        base64_decode($code), 
+        MCRYPT_MODE_ECB
+        
+    );//end mcrypt_decrypt
 
     $sql = new Sql();
 

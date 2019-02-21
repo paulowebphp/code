@@ -10,7 +10,7 @@
 
 					<div class="col-md-12">
 						<h1>CODE SAMPLES
-							<small>Alguns trechos de códigos meus: você gostaria de códigos assim no seu projeto?</small>
+							<small>Este site apresenta alguns trechos de códigos meus: você gostaria de códigos assim no seu projeto?</small>
 						</h1>
 					</div>
 
@@ -74,7 +74,14 @@
 <div id="home" class="tab-pane fade in active"><pre class="prettyprint linenums:1">public static function validForgotDecrypt( $code )
 {
 
-    $idrecovery = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, User::SECRET, base64_decode($code), MCRYPT_MODE_ECB);
+    $idrecovery = mcrypt_decrypt(
+
+        MCRYPT_RIJNDAEL_128, 
+        User::SECRET, 
+        base64_decode($code), 
+        MCRYPT_MODE_ECB
+
+    );//end mcrypt_decrypt
 
     $sql = new Sql();
 
