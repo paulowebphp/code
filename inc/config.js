@@ -183,7 +183,7 @@ $(document).ready(function(){
 			}//end else
 
 			a.children[3].children[0].innerHTML = '';
-			a.children[3].children[0].innerHTML = 'JS 4';
+			a.children[3].children[0].innerHTML = 'PHP 4';
 	
 		}).fail(function(){
 	
