@@ -42,18 +42,18 @@ header .container {
 	position: relative;
 }
 
-
-#row-hr-1 {
-	background-color: #171F26;
-	height: 40px;
+header #menu-mobile{
+	display: none;
 }
 
-header #row-hr-1 li a {
-	width: 32px;
-	height: 32px;
-	display: block;
+header #menu-mobile-mask
+{
+	display: none;
 }
-
+header #row-hr-1
+{
+	display: none;
+}
 
 #row-hr-2 {
 	background-color: #2e3131 ;
@@ -950,11 +950,6 @@ iframe {
   padding-bottom: 70px;
 }
 
-
-header #menu-mobile
-{
-	display:none;
-}
 
 header nav{
 	margin: 30px;
