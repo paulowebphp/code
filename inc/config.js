@@ -1,100 +1,6 @@
 $(document).ready(function(){
 
-	$('#contact3-form').submit(function(e){
-
-		e.preventDefault();
-		$(this)[0].children[3].children[0].disabled = true;
-
-		console.log($(this)[0]);
-
-		if( !$(this)[0].name.value || $(this)[0].name.value == '' )
-		{
-			window.location = '/';	
-		}
-		else if( !$(this)[0].email.value || $(this)[0].email.value == '' )
-		{
-			window.location = '/';
-		}
-		else
-		{
-			save($(this));
-			
-		}
-		$(this)[0].reset()
-		$(this)[0].children[3].children[0].disabled = false;
-
-	});//END submit
-
-
-
-	function save( data )
-	{
-		
-		$.ajax(
-		{
-
-			type: 'POST',
-			url: '/emails/create',
-			data: data.serialize()
-
-		}).done( function()
-		{
-
-			let link = document.createElement('a');
-			link.href = '/ebooks/ebook_1.pdf';
-			link.download = 'ebook_1.pdf';
-			link.click();
-
-		}).fail( function()
-		{
-
-				console.log("ERRO ......");
-
-		});//end ajax
-
-	}//END save
-
-
 	
-
-	$('#download-csv').on('click', function(e)
-	{
-
-		e.preventDefault();
-		generateCsv($(this));
-
-	});//END on
-
-
-
-
-	function generateCsv(data)
-	{
-
-		$.ajax(
-		{
-
-			type: 'GET',
-			url: '/emails/csv',
-			data: data.serialize()
-
-		}).done( function()
-		{
-
-			console.log("Success....");
-
-		}).fail( function()
-		{
-
-			console.log("ERRO ......");
-
-		});//end ajax
-
-	}//END generateCsv
-
-
-
-
 
 	
 
@@ -105,6 +11,8 @@ $(document).ready(function(){
 		$(this).tab('show');
 
 	});//END click
+
+
 
 	$('.nav-tabs a').on('shown.bs.tab', function( event )
 	{
@@ -123,6 +31,7 @@ $(document).ready(function(){
 	$('#block1').on('click', function(e)
 	{
 		e.preventDefault();
+		let active = 'active';
 		
 		$.ajax({
 
@@ -132,7 +41,7 @@ $(document).ready(function(){
 			
 			//console.log(phpValue);
 			//phpHtml = $.parseHTML(phpValue);
-			phpPrettify = PR.prettyPrintOne(phpValue);
+			let phpPrettify = PR.prettyPrintOne(phpValue);
 			//console.log(phpPrettify);	
 
 			
@@ -141,7 +50,15 @@ $(document).ready(function(){
 			$('#tab-languages').html(phpPrettify);
 
 			let a = document.querySelector('#tab-list');
+			//let b = document.querySelector('#tab-languages');
+
+			//console.log(a);
+			//console.log(a.children[0].className);
+			//console.log(a.children[0].className != 'active');
+			//console.log(a.children[0].className.match('active'));
+			//console.log(a.children[0].className.match('ative'));
 			
+			/*
 			
 			if( a.children[0].className != 'active' )
 			{
@@ -150,8 +67,8 @@ $(document).ready(function(){
 
 			}//end else
 
-			a.children[0].children[0].innerHTML = '';
-			a.children[0].children[0].innerHTML = 'PHP 1';
+			a.children[0].innerHTML = '';
+			a.children[0].innerHTML = 'PHP 1';
 			
 			if( a.children[1].className == 'active' )
 			{
@@ -161,8 +78,8 @@ $(document).ready(function(){
 
 			}//end else
 
-			a.children[1].children[0].innerHTML = '';
-			a.children[1].children[0].innerHTML = 'PHP 2';
+			a.children[1].innerHTML = '';
+			a.children[1].innerHTML = 'PHP 2';
 
 			if( a.children[2].className == 'active' )
 			{
@@ -172,8 +89,8 @@ $(document).ready(function(){
 
 			}//end else
 
-			a.children[2].children[0].innerHTML = '';
-			a.children[2].children[0].innerHTML = 'PHP 3';
+			a.children[2].innerHTML = '';
+			a.children[2].innerHTML = 'PHP 3';
 
 			if( a.children[3].className == 'active' )
 			{
@@ -182,8 +99,68 @@ $(document).ready(function(){
 
 			}//end else
 
-			a.children[3].children[0].innerHTML = '';
-			a.children[3].children[0].innerHTML = 'PHP 4';
+			a.children[3].innerHTML = '';
+			a.children[3].innerHTML = 'PHP 4';
+			
+			*/
+			
+			if( a.children[0].className.match(active) == null )
+			{
+
+				a.children[0].classList.add("active");
+
+			}//end if
+			
+
+			a.children[0].innerHTML = '';
+			a.children[0].innerHTML = 'PHP 1';
+
+
+
+
+
+			
+			if( a.children[1].className.match(active) )
+			{
+
+
+				a.children[1].classList.remove("active");
+
+			}//end else
+
+			a.children[1].innerHTML = '';
+			a.children[1].innerHTML = 'PHP 2';
+
+
+
+
+
+
+
+			if( a.children[2].className.match(active) )
+			{
+
+
+				a.children[2].classList.remove("active");
+
+			}//end else
+
+			a.children[2].innerHTML = '';
+			a.children[2].innerHTML = 'PHP 3';
+
+
+
+
+
+			if( a.children[3].className.match(active) )
+			{
+
+				a.children[3].classList.remove("active");
+
+			}//end else
+
+			a.children[3].innerHTML = '';
+			a.children[3].innerHTML = 'PHP 4';
 	
 		}).fail(function(){
 	
@@ -208,20 +185,30 @@ $(document).ready(function(){
 	$('#block2').on('click', function(e)
 	{
 		e.preventDefault();
+		let active = 'active';
+		
 		
 		$.ajax({
 
 			url:'./inc/js.html'
 	
 		}).done(function(jsValue){
+
+			//console.log(jsValue);
 			
 			//jsHtml = $.parseHTML(jsValue);
-			phpPrettify = PR.prettyPrintOne(jsValue);
+			let phpPrettify = PR.prettyPrintOne(jsValue);
 			$('#tab-languages').innerHtml = '';
 			$('#tab-languages').html(phpPrettify);
+
+
+
+
+			
 			
 			let a = document.querySelector('#tab-list');
 			
+			/*
 			if( a.children[0].className != 'active' )
 			{
 
@@ -229,8 +216,8 @@ $(document).ready(function(){
 
 			}//end else
 
-			a.children[0].children[0].innerHTML = '';
-			a.children[0].children[0].innerHTML = 'JS 1';
+			a.children[0].innerHTML = '';
+			a.children[0].innerHTML = 'JS 1';
 			
 			if( a.children[1].className == 'active' )
 			{
@@ -240,8 +227,8 @@ $(document).ready(function(){
 
 			}//end else
 
-			a.children[1].children[0].innerHTML = '';
-			a.children[1].children[0].innerHTML = 'JS 2';
+			a.children[1].innerHTML = '';
+			a.children[1].innerHTML = 'JS 2';
 
 			if( a.children[2].className == 'active' )
 			{
@@ -251,8 +238,8 @@ $(document).ready(function(){
 
 			}//end else
 
-			a.children[2].children[0].innerHTML = '';
-			a.children[2].children[0].innerHTML = 'JS ';
+			a.children[2].innerHTML = '';
+			a.children[2].innerHTML = 'JS ';
 
 			if( a.children[3].className == 'active' )
 			{
@@ -261,9 +248,64 @@ $(document).ready(function(){
 
 			}//end else
 
-			a.children[3].children[0].innerHTML = '';
-			a.children[3].children[0].innerHTML = 'JS 4';
+			a.children[3].innerHTML = '';
+			a.children[3].innerHTML = 'JS 4';
+			*/
 
+
+			if( a.children[0].className.match(active) == null )
+			{
+
+				a.children[0].classList.add("active");
+
+			}//end else
+
+			a.children[0].innerHTML = '';
+			a.children[0].innerHTML = 'JS 1';
+			
+
+
+
+
+			if( a.children[1].className.match(active) )
+			{
+
+
+				a.children[1].classList.remove("active");
+
+			}//end else
+
+			a.children[1].innerHTML = '';
+			a.children[1].innerHTML = 'JS 2';
+
+
+
+
+
+			if( a.children[2].className.match(active) )
+			{
+
+
+				a.children[2].classList.remove("active");
+
+			}//end else
+
+			a.children[2].innerHTML = '';
+			a.children[2].innerHTML = 'JS 3';
+
+
+
+
+
+			if( a.children[3].className.match(active) )
+			{
+
+				a.children[3].classList.remove("active");
+
+			}//end else
+
+			a.children[3].innerHTML = '';
+			a.children[3].innerHTML = 'JS 4';
 			
 	
 		}).fail(function(){

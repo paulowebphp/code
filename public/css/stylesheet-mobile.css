@@ -286,7 +286,7 @@ header.open-search #logotipo {
 	}
 	#row-section-1
 	{
-		height: 300px;
+		min-height: 300px;
 	}
 
 	#row-section-1 p {

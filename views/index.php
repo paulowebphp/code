@@ -63,15 +63,33 @@
 
 					<div class="col-md-12">
 
-						<ul id="tab-list" class="nav nav-tabs">
+						<!--
+                        
+                        <ul id="tab-list" class="nav nav-tabs" role="tablist">
 							<li class="active"><a href="#home">PHP 1</a></li>
 							<li><a href="#menu1">PHP 2</a></li>
 							<li><a href="#menu2">PHP 3</a></li>
 							<li><a href="#menu3">PHP 4</a></li>
-						</ul>
+                        </ul>
+                    
+                        -->
+                        
+                        <nav>
+                            <div class="nav nav-tabs" id="tab-list" role="tablist">
+
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">PHP 1</a>
+
+                                <a class="nav-item nav-link" id="nav-menu1-tab" data-toggle="tab" href="#menu1" role="tab" aria-controls="menu1" aria-selected="false">PHP 2</a>
+
+                                <a class="nav-item nav-link" id="nav-menu2-tab" data-toggle="tab" href="#menu2" role="tab" aria-controls="menu2" aria-selected="false">PHP 3</a>
+
+                                <a class="nav-item nav-link" id="nav-menu3-tab" data-toggle="tab" href="#menu3" role="tab" aria-controls="menu3" aria-selected="false">PHP 4</a>
+
+                            </div>
+                        </nav>
     
       					<div id="tab-languages" class="tab-content">
-<div id="home" class="tab-pane fade in active"><pre class="prettyprint linenums:1">public static function validForgotDecrypt( $code )
+<div id="home" class="tab-pane fade show active"><pre class="prettyprint linenums:1">public static function validForgotDecrypt( $code )
 {
 
     $idrecovery = mcrypt_decrypt(

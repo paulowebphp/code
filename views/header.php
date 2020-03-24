@@ -3,10 +3,11 @@
 	<head>
 
 		<meta charset="utf-8">
-		<meta name="viewport" content="width:device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Code Samples</title>
 		<link rel="icon" type="image/png" href="public/images/icons/favicon.ico"/>
-		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 		<link rel="stylesheet" href="public/fonts/fontawesome/css/fontawesome.min.css">
 		<link rel="stylesheet" href="public/css/stylesheet.css">
 		<link rel="stylesheet" href="public/css/stylesheet-mobile.css">
@@ -23,12 +24,29 @@
 			<div id="menu-mobile" class="container">
 				
 				<ul class="list-unstyled">
-					<li><a href="http://www.fat32.com.br/">Portfólio</a></li>
-					<li><a href="http://www.ecommerce.fat32.com.br/">E-commerce</a></li>
-					<li><a href="http://www.e-book.fat32.com.br/">E-book Store</a></li>
-					<li><a href="http://www.linhaprojetos.fat32.com.br/">Linha Projetos</a></li>
-					<li><a href="http://www.landing.fat32.com.br/">Landing Page</a></li>
-					<li><a href="http://www.borussia.fat32.com.br/">Borussia</a></li>
+					<li><a href="https://code.fat32.com.br.br/">Início</a></li>
+					<li>
+
+						<div class="dropdown">
+							<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Portfólio
+							</a>
+
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item" href="https://fat32.com.br">Portfólio</a>
+								<a class="dropdown-item" href="https://wedding.fat32.com.br">Wedding</a>
+								<a class="dropdown-item" href="https://plugin.fat32.com.br/formulario-de-contato">Plugin</a>
+								<a class="dropdown-item" href="https://ecommerce.fat32.com.br">E-commerce</a>
+								<a class="dropdown-item" href="https://e-book.fat32.com.br">E-book Store</a>
+								<a class="dropdown-item" href="https://linhaprojetos.fat32.com.br">Linha Projetos</a>
+								<a class="dropdown-item" href="https://landing.fat32.com.br">Landing</a>
+								<a class="dropdown-item" href="https://borussia.fat32.com.br">Borussia</a>
+							</div>
+						</div>
+
+
+					</li>
+					
 					
 				</ul>
 
@@ -50,11 +68,9 @@
 				
 				<div class="container">
 
-					<input type="search" id="input-search-mobile" class="container" placeholder="Buscarum...">
 				
 					<button id="btn-bars" type="button"><i class="fa fa-bars"></i></button>
-					<button id="btn-search" type="button"><i class="fa fa-search"></i></button>
-
+					
 				</div>
 
 			</div>
@@ -63,23 +79,35 @@
 				
 				<div class="row">
 					
-					<nav id="menu" class="pull-right">
+					<nav id="menu" class="pull-left">
 						<ul>
-							<li><a href="http://www.fat32.com.br/">Portfólio</a></li>
-							<li><a href="http://www.ecommerce.fat32.com.br/">E-commerce</a></li>
-							<li><a href="http://www.e-book.fat32.com.br/">E-book Store</a></li>
-							<li><a href="http://www.linhaprojetos.fat32.com.br/">Linha Projetos</a></li>
-							<li><a href="http://www.landing.fat32.com.br/">Landing Page</a></li>
-							<li><a href="http://www.borussia.fat32.com.br/">Borussia</a></li>
-							
-							<li class="search">
-								<div class="input-group">
-							      <input type="search" placeholder="Buscarum..." id="input-search">
-							      <span class="input-group-btn">
-							        <button type="button"><i class="fa fa-search"></i></button>
-							      </span>
-							    </div><!-- /input-group -->
+							<li><a href="https://landing.fat32.com.br.br/">Início</a></li>
+						
+							<li>
+
+
+								<div class="dropdown">
+									<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Portfólio
+									</a>
+
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+										<a class="dropdown-item" href="https://fat32.com.br">Portfólio</a>
+										<a class="dropdown-item" href="https://wedding.fat32.com.br">Wedding</a>
+										<a class="dropdown-item" href="https://plugin.fat32.com.br/formulario-de-contato">Plugin</a>
+										<a class="dropdown-item" href="https://ecommerce.fat32.com.br">E-commerce</a>
+										<a class="dropdown-item" href="https://e-book.fat32.com.br">E-book Store</a>
+										<a class="dropdown-item" href="https://linhaprojetos.fat32.com.br">Linha Projetos</a>
+										<a class="dropdown-item" href="https://landing.fat32.com.br">Landing</a>
+										
+										<a class="dropdown-item" href="https://borussia.fat32.com.br">Borussia</a>
+									</div>
+								</div>
+
+
 							</li>
+							
+							
 						</ul>
 					</nav>
 

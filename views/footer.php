@@ -75,8 +75,8 @@
 				
 				<div class="container copyright-mobile">
 					
-					<p class="pull-left">Copyright © Fa32 Web Services 2019. All rights reserved.</p>
-					<p class="pull-right text-roxo">Created by Jose Paulo de Carvalho C.</p>
+					<p class="pull-left">Copyright © <?php echo date('Y'); ?></p>
+					<p class="pull-right text-roxo">Criado por Jose Paulo de Carvalho.</p>
 
 				</div>
 
@@ -85,7 +85,8 @@
 		</footer>
 
 		<script src="lib/jquery/jquery.min.js"></script>
-		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script src="inc/config.js"></script>
 		<script src="public/js/efeitos.js"></script>
 		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
