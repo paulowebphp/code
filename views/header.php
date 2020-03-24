@@ -80,7 +80,7 @@
 					
 					<nav id="menu" class="pull-left">
 						<ul>
-							<li><a href="https://landing.fat32.com.br.br/">Início</a></li>
+							<li><a href="https://code.fat32.com.br.br/">Início</a></li>
 						
 							<li>
 
