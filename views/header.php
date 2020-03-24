@@ -28,12 +28,11 @@
 					<li>
 
 						<div class="dropdown">
-							<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="btn dropdown-toggle" href="https://fat32.com.br" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Portfólio
 							</a>
 
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="https://fat32.com.br">Portfólio</a>
 								<a class="dropdown-item" href="https://wedding.fat32.com.br">Wedding</a>
 								<a class="dropdown-item" href="https://plugin.fat32.com.br/formulario-de-contato">Plugin</a>
 								<a class="dropdown-item" href="https://ecommerce.fat32.com.br">E-commerce</a>
@@ -87,12 +86,12 @@
 
 
 								<div class="dropdown">
-									<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<a class="btn dropdown-toggle" href="https://fat32.com.br" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										Portfólio
 									</a>
 
 									<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-										<a class="dropdown-item" href="https://fat32.com.br">Portfólio</a>
+										
 										<a class="dropdown-item" href="https://wedding.fat32.com.br">Wedding</a>
 										<a class="dropdown-item" href="https://plugin.fat32.com.br/formulario-de-contato">Plugin</a>
 										<a class="dropdown-item" href="https://ecommerce.fat32.com.br">E-commerce</a>
